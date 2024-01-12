@@ -5,7 +5,7 @@ interface Props {
 }
 
 const bgColors = {
-  disabled: 'bg=[#c1c1c1]',
+  disabled: 'bg-[#c1c1c1]',
   default: 'bg-black',
 };
 
@@ -20,6 +20,7 @@ const Button = ({ children, onClick, disabled }: Props) => {
     <button
       className={`w-full h-12 text-lg text-white ${bgColor}`}
       onClick={handleClick}
+      disabled={disabled}
     >
       {children}
     </button>
