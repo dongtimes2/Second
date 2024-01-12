@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
 
+import { useOrderStore } from '@/store/order';
+
 import { IItem } from '../../types/item';
 import EventMark from '../EventMark/EventMark';
 
@@ -10,15 +12,26 @@ const bgColors = {
 };
 
 const Item = ({ event, name, price }: IItem) => {
+  const setTotalPrice = useOrderStore((state) => state.setTotalPrice);
+  const setTotalAmount = useOrderStore((state) => state.setTotalAmount);
+
   const [count, setCount] = useState(0);
 
   const bgColor = count ? bgColors.apricot : bgColors.white;
 
   const handleButtonClick = (type: 'plus' | 'minus') => {
     if (type === 'plus') {
-      count < 999 && setCount(count + 1);
+      if (count < 999) {
+        setCount(count + 1);
+        setTotalPrice((prevPrice) => prevPrice + price);
+        setTotalAmount((prevAmount) => prevAmount + 1);
+      }
     } else if (type === 'minus') {
-      count > 0 && setCount(count - 1);
+      if (count > 0) {
+        setCount(count - 1);
+        setTotalPrice((prevPrice) => prevPrice - price);
+        setTotalAmount((prevAmount) => prevAmount - 1);
+      }
     }
   };
 
