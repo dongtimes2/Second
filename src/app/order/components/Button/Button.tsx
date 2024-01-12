@@ -18,7 +18,7 @@ const Button = ({ children, onClick, disabled }: Props) => {
 
   return (
     <button
-      className={`w-full h-12 text-lg text-white ${bgColor}`}
+      className={`w-full h-12 text-white ${bgColor}`}
       onClick={handleClick}
       disabled={disabled}
     >

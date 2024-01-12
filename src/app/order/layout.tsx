@@ -8,9 +8,10 @@ import Loading from './loading';
 interface Props {
   children: React.ReactNode;
 }
+
 const OrderLayout = ({ children }: Props) => {
   return (
-    <div className="h-full">
+    <div className="h-full text-lg">
       <Header />
       <Suspense fallback={<Loading />}>{children}</Suspense>
       <BottomSheet />
