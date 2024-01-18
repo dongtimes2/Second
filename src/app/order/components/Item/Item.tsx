@@ -50,7 +50,7 @@ const Item = ({ event, name, price }: IItem) => {
         <div className="flex justify-between">
           <div className="flex gap-2">
             <button onClick={() => handleButtonClick('minus')}>-</button>
-            <p>{count}</p>
+            <p data-testid="count">{count}</p>
             <button onClick={() => handleButtonClick('plus')}>+</button>
           </div>
           <div>
