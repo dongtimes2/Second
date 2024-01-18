@@ -5,6 +5,7 @@ interface OrderState {
   totalAmount: number;
   setTotalPrice: (updater: (prevTotalPrice: number) => number) => void;
   setTotalAmount: (updater: (prevTotalAmount: number) => number) => void;
+  reset: () => void;
 }
 
 export const useOrderStore = create<OrderState>((set) => ({
@@ -20,4 +21,5 @@ export const useOrderStore = create<OrderState>((set) => ({
       return { totalAmount: updater(state.totalAmount) };
     });
   },
+  reset: () => set({ totalPrice: 0, totalAmount: 0 }),
 }));
