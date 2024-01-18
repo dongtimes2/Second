@@ -45,7 +45,7 @@ const Item = ({ event, name, price }: IItem) => {
       <div className="flex flex-col justify-between w-full">
         <div className="flex gap-3">
           <p>{name}</p>
-          {event && <EventMark />}
+          {!!event && <EventMark />}
         </div>
         <div className="flex justify-between">
           <div className="flex gap-2">
