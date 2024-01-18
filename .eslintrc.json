@@ -1,6 +1,6 @@
 {
   "root": true,
-  "env": { "browser": true, "es2020": true, "node": true },
+  "env": { "browser": true, "es2020": true, "node": true, "jest": true },
   "settings": {
     "react": {
       "version": "detect"
@@ -13,6 +13,7 @@
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
+    "plugin:testing-library/react",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -24,7 +25,13 @@
       "jsx": true
     }
   },
-  "plugins": ["react", "react-refresh", "import", "@typescript-eslint"],
+  "plugins": [
+    "react",
+    "react-refresh",
+    "import",
+    "@typescript-eslint",
+    "testing-library"
+  ],
   "ignorePatterns": [
     "node_modules/**/*",
     "next.config.js",
