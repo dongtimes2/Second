@@ -4,7 +4,9 @@ import { IItem } from './types/item';
 const getData = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC__SERVER_URL}/items`,
+      `${process.env.NEXT_PUBLIC__SERVER_URL}/items`, {
+        cache: 'no-cache',
+      }
     );
     return response.json();
   } catch (error) {
