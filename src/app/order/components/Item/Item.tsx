@@ -49,9 +49,9 @@ const Item = ({ event, name, price }: IItem) => {
         </div>
         <div className="flex justify-between">
           <div className="flex gap-2">
-            <button onClick={() => handleButtonClick('minus')}>-</button>
-            <p data-testid="count">{count}</p>
-            <button onClick={() => handleButtonClick('plus')}>+</button>
+            <button className="select-none cursor-pointer" onClick={() => handleButtonClick('minus')}>-</button>
+            <p className="w-8 text-center select-none" data-testid="count">{count}</p>
+            <button className="select-none cursor-pointer" onClick={() => handleButtonClick('plus')}>+</button>
           </div>
           <div>
             <p>{price.toLocaleString('ko-KR')}원</p>
