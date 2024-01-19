@@ -18,7 +18,11 @@ const BottomSheet = () => {
 
   const handleButtonClick = () => {
     setIsLoading(true);
-    router.push(PATH.COMPLETE);
+    if (Math.random() > 0.5) {
+      router.push(PATH.COMPLETE);
+    } else {
+      router.push(PATH.ERROR);
+    }
   };
 
   return (
